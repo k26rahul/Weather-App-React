@@ -1,10 +1,10 @@
-.weather-details {
-  text-align: center;
+.message {
+  color: #333;
 }
 
-.location h1 {
-  font-size: 24px;
-  margin-bottom: 0;
+.weather-details {
+  position: relative;
+  text-align: center;
 }
 
 .weather-icon {

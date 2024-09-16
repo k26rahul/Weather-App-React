@@ -19,3 +19,26 @@ body {
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  .weather-card {
+    width: 350px;
+    padding: 20px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 400px) {
+  #root {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .weather-card {
+    width: 100%;
+  }
+}
