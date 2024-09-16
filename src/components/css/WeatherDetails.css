@@ -1,0 +1,38 @@
+.weather-details {
+  text-align: center;
+}
+
+.location h1 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.weather-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.condition {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+}
+
+.detail-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
