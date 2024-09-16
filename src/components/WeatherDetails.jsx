@@ -2,6 +2,11 @@ import React from 'react';
 import './css/WeatherDetails.css';
 import { getWeatherEmoji } from './utils';
 
+const formatTime = timestamp => {
+  const date = new Date(timestamp * 1000);
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+};
+
 function WeatherDetails({ status, weatherData }) {
   const Message = ({ message }) => <div className="message">{message}</div>;
 
@@ -23,6 +28,8 @@ function WeatherDetails({ status, weatherData }) {
     const weatherCondition = weatherData.weather[0].main;
     const city = weatherData.name;
     const country = weatherData.sys.country;
+    const sunrise = formatTime(weatherData.sys.sunrise);
+    const sunset = formatTime(weatherData.sys.sunset);
 
     return (
       <div className="weather-details">
@@ -42,6 +49,16 @@ function WeatherDetails({ status, weatherData }) {
           <div className="detail">
             <span className="detail-icon">💨</span>
             <span>{weatherData.wind.speed} km/h Wind</span>
+          </div>
+        </div>
+        <div className="details">
+          <div className="detail">
+            <span className="detail-icon">🌅</span>
+            <span>Sunrise: {sunrise}</span>
+          </div>
+          <div className="detail">
+            <span className="detail-icon">🌇</span>
+            <span>Sunset: {sunset}</span>
           </div>
         </div>
       </div>

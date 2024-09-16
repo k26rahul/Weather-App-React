@@ -25,11 +25,17 @@
 .details {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .detail {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  width: 50%;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  padding-bottom: 4px;
 }
 
 .detail-icon {
