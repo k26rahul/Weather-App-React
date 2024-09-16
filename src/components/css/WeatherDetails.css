@@ -31,9 +31,10 @@
 
 .detail {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   width: 50%;
-  border: 2px solid #eee;
+  border-left: 5px solid #f5f5f5;
+  border-right: 5px solid #f5f5f5;
   border-radius: 5px;
   padding-bottom: 4px;
 }
