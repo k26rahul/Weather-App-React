@@ -9,7 +9,7 @@ const getRandomCity = () => {
 function SearchForm({ city, setCity, handleSearch }) {
   useEffect(() => {
     setCity(getRandomCity());
-  }, [setCity]);
+  }, []);
 
   return (
     <form className="search-bar" onSubmit={handleSearch}>

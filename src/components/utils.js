@@ -9,9 +9,8 @@ export const getWeatherEmoji = label => {
     case 'Snow':
       return '🌨️';
     case 'Mist':
-      return '🌫️';
     case 'Smoke':
-      return '🌪️';
+      return '🌫️';
     case 'Haze':
       return '🌁';
     case 'Dust':

@@ -11,17 +11,13 @@ function WeatherDetails({ status, weatherData }) {
   const Message = ({ message }) => <div className="message">{message}</div>;
 
   if (status === 'idle' || status === 'pending' || status === 'rejected') {
-    return (
-      <Message
-        message={
-          status === 'idle'
-            ? 'Please search for a city to see the weather details.'
-            : status === 'pending'
-            ? 'Loading...'
-            : 'City not found. Please try again.'
-        }
-      />
-    );
+    const messages = {
+      idle: 'Please search for a city to see the weather details.',
+      pending: 'Loading...',
+      rejected: 'City not found. Please try again.'
+    };
+
+    return <Message message={messages[status]} />;
   }
 
   if (status === 'resolved' && weatherData) {
@@ -32,15 +28,18 @@ function WeatherDetails({ status, weatherData }) {
     const sunset = formatTime(weatherData.sys.sunset);
 
     return (
-      <div className="weather-details">
+      <section className="weather-details">
+
         <div className="location">
           <h1>
             {city}, {country}
           </h1>
         </div>
+
         <div className="weather-icon">{getWeatherEmoji(weatherCondition)}</div>
         <div className="temperature">{Math.round(weatherData.main.temp)}°C</div>
         <div className="condition">{weatherData.weather[0].description}</div>
+
         <div className="details">
           <div className="detail">
             <span className="detail-icon">💧</span>
@@ -51,6 +50,7 @@ function WeatherDetails({ status, weatherData }) {
             <span>{weatherData.wind.speed} km/h Wind</span>
           </div>
         </div>
+
         <div className="details">
           <div className="detail">
             <span className="detail-icon">🌅</span>
@@ -61,7 +61,8 @@ function WeatherDetails({ status, weatherData }) {
             <span>Sunset: {sunset}</span>
           </div>
         </div>
-      </div>
+
+      </section>
     );
   }
 
